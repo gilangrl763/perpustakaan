@@ -1,0 +1,31 @@
+@font-face {
+	font-family: 'QuickSand Regular';
+	src:url('../fonts/QuickSand/quicksand-regular-webfont.eot');
+	src: url('../fonts/QuickSand/quicksand-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/QuickSand/quicksand-regular-webfont.woff') format('woff'),
+	url('../fonts/QuickSand/quicksand-regular-webfont.ttf') format('truetype'),
+	url('../fonts/QuickSand/quicksand-regular-webfont.svg#QuickSand Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'QuickSand Bold';
+	src:url('../fonts/QuickSand/Quicksand-Bold-webfont.eot');
+	src: url('../fonts/QuickSand/Quicksand-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/QuickSand/Quicksand-Bold-webfont.woff') format('woff'),
+	url('../fonts/QuickSand/Quicksand-Bold-webfont.ttf') format('truetype'),
+	url('../fonts/QuickSand/Quicksand-Bold-webfont.svg#QuickSand Bold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* TTF type */
+@font-face {
+	font-family: 'QuickSand Medium';
+	src: url('../fonts/QuickSand/Quicksand-Medium.ttf');
+}
+
+
+
+
+

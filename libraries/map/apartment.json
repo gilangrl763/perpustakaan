@@ -1,0 +1,77 @@
+{
+	"mapwidth": "2000",
+	"mapheight": "1200",
+	"categories": [
+		{
+			"id": "rooms",
+			"title": "Rooms",
+			"color": "#67d1e7",
+			"show": "false"
+		}
+	],
+	"levels": [
+		{
+			"id": "lower",
+			"name": "0",
+			"title": "Lower floor",
+			"map": "images/apartment/banjarmasinport.jpg",
+			"minimap": "images/apartment/banjarmasinport-lower.jpg",
+			"locations": [
+				{
+					"id": "kitchen",
+					"label": "Kitchen",
+					"description": "The main living room",
+					"x": "0.665",
+					"y": "0.41",
+					"zoom": "5"
+				},
+				{
+					"id": "dining",
+					"label": "Dining room",
+					"description": "The main living room",
+					"category": "rooms",
+					"x": "0.3",
+					"y": "0.4",
+					"zoom": "5"
+				},
+				{
+					"id": "laptop",
+					"label": "laptop room",
+					"description": "The laptop living room",
+					"category": "rooms",
+					"x": "0.648",
+					"y": "0.4",
+					"zoom": "5"
+				}
+			]
+		},
+		{
+			"id": "upper",
+			"name": "1",
+			"title": "Upper Floor",
+			"map": "images/apartment/upper.jpg",
+			"minimap": "images/apartment/upper-small.jpg",
+			"show": "true",
+			"locations": [
+				{
+					"id": "bathroom",
+					"label": "Bathroom",
+					"description": "The main living room",
+					"pin": "false",
+					"x": "0.665",
+					"y": "0.41",
+					"zoom": "5"
+				},
+				{
+					"id": "livingup",
+					"label": "Living room",
+					"description": "The main living room",
+					"category": "rooms",
+					"x": "0.49",
+					"y": "0.36",
+					"zoom": "5"
+				}
+			]
+		}
+	]
+}

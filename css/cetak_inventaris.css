@@ -1,0 +1,47 @@
+/*
+html{
+	margin:0 0;
+	
+}
+body{
+	margin:0 0;
+	
+	
+}*/
+#header{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px
+}
+
+#kop{
+	
+}
+#kop table{
+	border-collapse:collapse;
+	width:100%;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+}
+
+#detil table{
+	border-collapse: collapse;
+	border: 1px solid black;
+	width:100%;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:12px;
+}
+#detil table td{
+	border: 1px solid black;
+	padding:4px 10px;
+}
+#footer{
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:18px
+}
+#footer table{
+	border-collapse:collapse;
+	width:100%;
+	font-family:Tahoma, Geneva, sans-serif;
+	font-size:13px;
+}
+

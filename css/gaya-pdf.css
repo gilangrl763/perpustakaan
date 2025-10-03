@@ -1,0 +1,154 @@
+body{
+	font-family: 'calibri';
+	font-size: 10pt;
+}
+
+/****/
+.header{
+	background-color: #fcfdfd; 
+	/*background-image: url(WEB-INF/images/linear_bg_1.png); */
+	background-repeat: repeat-y; 
+	/* Safari 4-5, Chrome 1-9 */ 
+	background: -webkit-gradient(linear, left top, right top, from(#fcfdfd), to(#48c8e9)); 
+	/* Safari 5.1, Chrome 10+ */ 
+	background: -webkit-linear-gradient(left, #fcfdfd, #48c8e9); 
+	/* Firefox 3.6+ */ 
+	background: -moz-linear-gradient(left, #fcfdfd, #48c8e9); 
+	/* IE 10 */ 
+	background: -ms-linear-gradient(left, #fcfdfd, #48c8e9); 
+	/* Opera 11.10+ */ 
+	background: -o-linear-gradient(left, #fcfdfd, #48c8e9);
+	
+	position: relative !important;
+	/*width: 100%;*/
+	/*left: 0px;*/
+	
+	margin-left: -60px;
+	margin-right: -60px;
+	
+	/*border: 1px solid cyan;*/
+	
+	padding-top: 10pt;
+	padding-bottom: 10pt;
+}
+.header-inner{
+	position: relative !important;
+	/*border: 1px solid red;*/
+	top: 0;
+	padding-left: 50px;
+}
+
+.judul-aplikasi{
+	position: relative !important;
+	float: left;
+	/*border: 1px solid blue;*/
+	width: 100%;
+	top: 0;
+	padding-left: 20px;
+	padding-right: 50px;
+	text-align: right;
+	font-size: 10pt;
+	color: #404040;
+}
+
+img.logo-header{
+	float: left;
+	position: absolute; !important;
+	/*width: 150px;*/
+	height: 50px;
+	/*border: 1px solid red;*/
+}
+
+img.foto{
+	width: 120px;
+}
+
+/****/
+table.datatable{
+	border: 0px solid #000000;
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 10pt;
+	vertical-align: center;
+	font-family: 'calibri';
+	font-size: 10pt;
+}
+table.datatable thead th{
+	background: #e8e8e8;
+	padding: 4px 8px;
+	border: 0.5px solid #000000;
+	vertical-align: center;
+	font-size: 11px;
+}
+table.datatable tbody td{
+	border: 0px solid #000000;
+	padding: 6px 10pt;
+	vertical-align: center;
+}
+table.datatable tbody tr:nth-child(even) td{
+	border: 0px solid #000000;
+	vertical-align: center;
+}
+/****/
+table.datatable-border{
+	border: 1px solid #000000;
+	border-collapse: collapse;
+	width: 100%;
+	margin-top: 10pt;
+	vertical-align: center;
+	font-family: 'calibri';
+	font-size: 10pt;
+}
+table.datatable-border thead th{
+	background: #e8e8e8;
+	padding: 4px 8px;
+	border: 1px solid #000000;
+	vertical-align: center;
+	font-size: 11px;
+}
+table.datatable-border tbody tr:nth-child(even) th{
+	border: 1px solid #000000;
+	vertical-align: center;
+}
+table.datatable-border tbody td{
+	border: 1px solid #000000;
+	padding: 6px 10pt;
+	vertical-align: center;
+}
+table.datatable-border tbody tr:nth-child(even) td{
+	border: 1px solid #000000;
+	vertical-align: center;
+}
+/****/
+.cell-restricted {
+	background: #d3cf00;
+}
+/****/
+
+/****/
+table.footer{
+	width: 100%;
+	margin-top: 10pt;
+	vertical-align: center;
+	font-family: 'calibri';
+	font-size: 8px;
+	font-style: italic;
+	color: #333333;
+}
+table.footer thead th{
+	padding: 4px 8px;
+	vertical-align: center;
+}
+table.footer thead th.nomor{
+	width: 20px;
+}
+table.footer tbody td{
+	padding: 6px 10pt;
+	vertical-align: center;
+}
+table.footer tbody tr:nth-child(even) td{
+	vertical-align: center;
+}
+
+
+

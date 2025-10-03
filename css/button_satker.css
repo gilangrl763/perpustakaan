@@ -1,0 +1,10 @@
+/* Tutorial button with jQuery */
+@font-face{
+	font-family: menu-kiri;
+	src: url('../../WEB-INF/fonts/OpenSans-CondLight.ttf')
+		,url('../../WEB-INF/fonts/OpenSans-CondLight.eot'); /* IE9 */
+}
+
+body{
+	font-family: menu-kiri;
+}

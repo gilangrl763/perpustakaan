@@ -1,0 +1,1259 @@
+.im-element a {
+	text-decoration: none !important;
+}
+
+.im-element input,
+.im-element button {
+	outline: none;
+}
+
+.im-element * { -webkit-tap-highlight-color: rgba(0,0,0,0); }
+
+.im-element {
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	border-radius: 3px;
+	font-size: 0;
+	overflow: hidden;
+	
+	/*height: -moz-calc(100% - 100px);
+    height: -webkit-calc(100% - 100px);
+    height: -o-calc(100% - 100px);
+    height: calc(100% - 100px);*/
+	height:200px;
+}
+
+.im-container {
+	background-color: #f4f4f4;
+	background-image: url(images/noisy_grid.png);
+	display: inline-block;
+	overflow: hidden;
+	position: relative;
+	width: 80%;
+
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	-o-user-select: none;
+	
+	/*height: -moz-calc(100% - 100px);
+    height: -webkit-calc(100% - 100px);
+    height: -o-calc(100% - 100px);
+    height: calc(100% - 100px);*/
+	height:200px;
+	
+}
+
+.im-map {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.im-map img {
+	width: 100%;
+}
+
+/* Map layer */
+.im-layer {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}
+
+.im-map-image {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.im-locations {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.im-pin {
+	background-image: url(images/pin-red.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+.im-pin-green {
+	background-image: url(images/pin-green.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+
+/******************************************************************************************/
+.im-pin-CHASSIS-BAIK {
+	background-image: url(images/green/CHASSIS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CHASSIS-PERBAIKAN {
+	background-image: url(images/yellow/CHASSIS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CHASSIS-RUSAK {
+	background-image: url(images/red/CHASSIS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+
+/*******************************************************/
+
+.im-pin-CONTCRANE-BAIK {
+	background-image: url(images/green/CONTCRANE.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CONTCRANE-PERBAIKAN {
+	background-image: url(images/yellow/CONTCRANE.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CONTCRANE-RUSAK {
+	background-image: url(images/red/CONTCRANE.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-CONVEYOR-BAIK {
+	background-image: url(images/green/CONVEYOR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CONVEYOR-PERBAIKAN {
+	background-image: url(images/yellow/CONVEYOR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-CONVEYOR-RUSAK {
+	background-image: url(images/red/CONVEYOR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-FORKLIFT-BAIK {
+	background-image: url(images/green/FORKLIFT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-FORKLIFT-PERBAIKAN {
+	background-image: url(images/yellow/FORKLIFT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-FORKLIFT-RUSAK {
+	background-image: url(images/red/FORKLIFT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-HEADTRUCK-BAIK {
+	background-image: url(images/green/HEADTRUCK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-HEADTRUCK-PERBAIKAN {
+	background-image: url(images/yellow/HEADTRUCK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-HEADTRUCK-RUSAK {
+	background-image: url(images/red/HEADTRUCK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KRANAPUNG-BAIK {
+	background-image: url(images/green/KRANAPUNG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANAPUNG-PERBAIKAN {
+	background-image: url(images/yellow/KRANAPUNG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANAPUNG-RUSAK {
+	background-image: url(images/red/KRANAPUNG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KRANLSTRIK-BAIK {
+	background-image: url(images/green/KRANLSTRIK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANLSTRIK-PERBAIKAN {
+	background-image: url(images/yellow/KRANLSTRIK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANLSTRIK-RUSAK {
+	background-image: url(images/red/KRANLSTRIK.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-PIPAAIR-BAIK {
+	background-image: url(images/green/PIPAAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-PIPAAIR-PERBAIKAN {
+	background-image: url(images/yellow/PIPAAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-PIPAAIR-RUSAK {
+	background-image: url(images/red/PIPAAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-SPREADER-BAIK {
+	background-image: url(images/green/SPREADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-SPREADER-PERBAIKAN {
+	background-image: url(images/yellow/SPREADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-SPREADER-RUSAK {
+	background-image: url(images/red/SPREADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TIMBANGAN-BAIK {
+	background-image: url(images/green/TIMBANGAN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TIMBANGAN-PERBAIKAN {
+	background-image: url(images/yellow/TIMBANGAN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TIMBANGAN-RUSAK {
+	background-image: url(images/red/TIMBANGAN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TONGKANG-BAIK {
+	background-image: url(images/green/TONGKANG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TONGKANG-PERBAIKAN {
+	background-image: url(images/yellow/TONGKANG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TONGKANG-RUSAK {
+	background-image: url(images/red/TONGKANG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KPPJLLAIN-BAIK {
+	background-image: url(images/green/KPPJLLAIN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJLLAIN-PERBAIKAN {
+	background-image: url(images/yellow/KPPJLLAIN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJLLAIN-RUSAK {
+	background-image: url(images/red/KPPJLLAIN.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KPPJKEPIL-BAIK {
+	background-image: url(images/green/KPPJKEPIL.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJKEPIL-PERBAIKAN {
+	background-image: url(images/yellow/KPPJKEPIL.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJKEPIL-RUSAK {
+	background-image: url(images/red/KPPJKEPIL.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KRANDARAT-BAIK {
+	background-image: url(images/green/KRANDARAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANDARAT-PERBAIKAN {
+	background-image: url(images/yellow/KRANDARAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KRANDARAT-RUSAK {
+	background-image: url(images/red/KRANDARAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-EXAF-BAIK {
+	background-image: url(images/green/EXAF.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-EXAF-PERBAIKAN {
+	background-image: url(images/yellow/EXAF.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-EXAF-RUSAK {
+	background-image: url(images/red/EXAF.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TOPLOADER-BAIK {
+	background-image: url(images/green/TOPLOADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TOPLOADER-PERBAIKAN {
+	background-image: url(images/yellow/TOPLOADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TOPLOADER-RUSAK {
+	background-image: url(images/red/TOPLOADER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KPPJMBOAT-BAIK {
+	background-image: url(images/green/KPPJMBOAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJMBOAT-PERBAIKAN {
+	background-image: url(images/yellow/KPPJMBOAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJMBOAT-RUSAK {
+	background-image: url(images/red/KPPJMBOAT.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KPPJPANDU-BAIK {
+	background-image: url(images/green/KPPJPANDU.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJPANDU-PERBAIKAN {
+	background-image: url(images/yellow/KPPJPANDU.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJPANDU-RUSAK {
+	background-image: url(images/red/KPPJPANDU.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TRSTAINER-BAIK {
+	background-image: url(images/green/TRSTAINER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TRSTAINER-PERBAIKAN {
+	background-image: url(images/yellow/TRSTAINER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TRSTAINER-RUSAK {
+	background-image: url(images/red/TRSTAINER.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TRUCKAIR-BAIK {
+	background-image: url(images/green/TRUCKAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TRUCKAIR-PERBAIKAN {
+	background-image: url(images/yellow/TRUCKAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TRUCKAIR-RUSAK {
+	background-image: url(images/red/TRUCKAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-TONKANGAIR-BAIK {
+	background-image: url(images/green/TONKANGAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TONKANGAIR-PERBAIKAN {
+	background-image: url(images/yellow/TONKANGAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-TONKANGAIR-RUSAK {
+	background-image: url(images/red/TONKANGAIR.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-KPPJTUNDA-BAIK {
+	background-image: url(images/green/KPPJTUNDA.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJTUNDA-PERBAIKAN {
+	background-image: url(images/yellow/KPPJTUNDA.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-KPPJTUNDA-RUSAK {
+	background-image: url(images/red/KPPJTUNDA.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-RS-BAIK {
+	background-image: url(images/green/RS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-RS-PERBAIKAN {
+	background-image: url(images/yellow/RS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-RS-RUSAK {
+	background-image: url(images/red/RS.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin-RTG-BAIK {
+	background-image: url(images/green/RTG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-RTG-PERBAIKAN {
+	background-image: url(images/yellow/RTG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+.im-pin-RTG-RUSAK {
+	background-image: url(images/red/RTG.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 30px;
+	height: 30px;
+	margin-top: -25px;
+	margin-left: -10px;
+	position: absolute;
+}
+
+/*******************************************************/
+
+.im-pin.orange { background-image: url(images/pin-orange.png); }
+.im-pin.green { background-image: url(images/pin-green.png); }
+.im-pin.blue { background-image: url(images/pin-blue.png); }
+.im-pin.purple { background-image: url(images/pin-purple.png); }
+
+/* Minimap */
+.im-minimap {
+	border: 1px solid rgba(0, 0, 0, 0.6);
+	border-radius: 3px;
+	position: absolute;
+	width: 140px;
+	margin: 10px;
+	bottom: 0;
+	right: 0;
+	overflow: hidden;
+}
+
+.im-minimap img {
+	width: 100%;
+}
+
+.im-minimap-overlay {
+	background-color: rgba(0, 0, 0, 0.5);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.im-minimap .im-minimap-active {
+	position: absolute;
+	opacity: 1;
+	top: 0;
+	left: 0;
+}
+
+/* Clear Button */
+.im-clear-button {
+	background-color: #fff;
+	background-image: url(images/target.png);
+	background-repeat: no-repeat;
+	background-position: center;
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	margin: 10px;
+	width: 24px;
+	height: 24px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+/* Levels */
+.im-levels {
+	/*background-color: #fff;*/
+	background-color:rgba(255,255,255,0.6);
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 10px;
+	width: 320px;
+	overflow: hidden;
+}
+
+.im-levels > * {
+	display: block;
+	width: 100%;
+}
+
+.im-levels-select {
+	/*background-image: url(images/arrows!.png);*/
+	background-color:rgba(255,255,255,0.2);
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	font-weight: bold;
+	margin: 0;
+	margin-right: -20px;
+	padding: 4px 0;
+	padding-left: 2px;
+	outline: none;
+	width: 320px;
+}
+.im-levels button {
+	/*background-color: #fff;*/
+	background-color:rgba(255,255,255,0.2);
+	background-repeat: no-repeat;
+	background-position: center;
+	border: none;
+	cursor: pointer;
+	height: 16px;
+	width: 100%;
+}
+
+.im-levels .im-levels-up {
+	background-image: url(images/arrow-up.png);
+	border-bottom: 1px solid #ddd;
+}
+
+.im-levels .im-levels-down {
+	background-image: url(images/arrow-down.png);
+	border-top: 1px solid #ddd;
+}
+
+.im-levels button:disabled {
+	/*background-color: #eee;*/
+	background-color:rgba(182,182,182,0.2);
+	cursor: default;
+}
+
+/* Sidebar */
+.im-sidebar {
+	background-color: #f8f8f8;
+	width: 20%;
+	height: 100%;
+	float: left;
+	position: relative;
+}
+
+@media all and (max-width: 560px) {
+	.im-element {
+		height: auto;
+	}
+
+	.im-container,
+	.im-sidebar {
+		width: 100%;
+	}
+
+	.im-element {
+		height: auto !important;
+	}
+}
+
+/* Search */
+.im-search-form {
+	background-color: #f8f8f8;
+	border-bottom: 1px solid #ddd;
+	padding: 14px 12px;
+	margin: 0;
+	width: 100%;
+	position: absolute;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.im-search-input {
+	background-image: url(images/viewer.png);
+	background-repeat: no-repeat;
+	background-position: 8px;
+	border: 1px solid #ddd;
+	border-radius: 16px;
+	font-size: 14px;
+	font-family: inherit;
+	line-height: 20px;
+	height: 34px;
+	margin: 0;
+	padding: 6px 32px 6px 32px;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.im-search-clear {
+	background-image: url(images/cross.png);
+	background-repeat: no-repeat;
+	background-color: transparent;
+	background-position: center;
+	border: none;
+	cursor: pointer;
+	display: none;
+	position: absolute;
+	right: 22px;
+	margin: 10px 0;
+	width: 16px;
+	height: 16px;
+}
+
+/* List */
+.im-list-container {
+	padding-top: 63px;
+	height: 100%;
+	overflow-y: auto;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.im-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	overflow-y: auto;
+	height: 100%;
+}
+
+.im-list-container ol {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.im-list-container li {
+	border-color: inherit;
+}
+
+.im-list-category > a {
+	background-color: #aaa;
+	color: #fff;
+	display: block;
+	font-size: 11px;
+	line-height: 26px;
+	padding: 12px 12px 12px 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	box-sizing: border-box;
+}
+
+.im-list-category > a img {
+	float: left;
+	margin-right: 10px;
+}
+
+.im-list-category > a span {
+	background-color: rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	float: right;
+	font-size: 10px;
+	line-height: 10px;
+	padding: 4px;
+	margin: 4px 0 4px 4px;
+}
+
+.im-list-location a {
+	background-color: #fff;
+	border-left: 2px solid transparent;
+	border-bottom: 1px solid #eee;
+	display: block;
+	font-size: 10px;
+	padding: 5px 10px;
+	/*min-height: 50px;*/
+	transition: border-color 0.2s;
+	
+}
+.im-list-location a div{
+	margin-top:-8px;
+}
+
+.im-list-location a:hover {
+	background-color: #f4f4f4;
+	border-left: 2px solid;
+	border-color: inherit;
+	border-bottom: 1px solid #eee;
+}
+
+.im-list-location img {
+	float: left;
+	margin-right: 10px;
+}
+
+.im-list-location h4 {
+	color: #444;
+	font-size: 11px;
+	font-weight: normal;
+	margin: 4px 0 8px 0;
+}
+
+.im-list-location span {
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+/* Tooltip */
+.im-tooltip {
+	background-color: #fff;
+	box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	display: none;
+	margin-left: -110px;
+	margin-top: -120px;
+	padding: 10px;
+	position: absolute;
+	width: 200px;
+}
+
+.im-tooltip-triangle {
+	background-image: url(images/tooltip-triangle.png);
+	width: 14px;
+	height: 6px;
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	margin-bottom: -6px;
+	margin-left: -7px;
+}
+
+.im-tooltip button {
+	background-color: #eee;
+	background-image: url(images/cross.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+	float: right;
+	margin-top: -4px;
+	margin-right: -4px;
+	width: 10px;
+	height: 10px;
+}
+
+.im-tooltip h4 {
+	color: #444;
+	font-size: 13px;
+	font-weight: normal;
+	margin: 4px 0 4px 0;
+}
+
+.im-tooltip p {
+	color: #000;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 16px;
+	margin: 0;
+}
+
+.im-tooltip a {
+	display: block;
+	float: right;
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+.im-tooltip img {
+	float: left;
+	margin: -10px;
+	margin-right: 10px;
+	width: 80px;
+	height: 120px;
+}
+
+.BAIK {
+	font-size:12px;
+	color:#239500;
+}
+
+.PERBAIKAN {
+	font-size:12px;
+	color:#958c00;
+}
+
+.RUSAK {
+	font-size:12px;
+	color:#a60000;
+}

@@ -1,0 +1,49 @@
+
+@font-face {
+	font-family: 'Montserrat Regular';
+	src:url('../fonts/montserrat/montserrat-regular-webfont.eot');
+	src: url('../fonts/montserrat/montserrat-regular-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/montserrat/montserrat-regular-webfont.woff') format('woff'),
+	url('../fonts/montserrat/montserrat-regular-webfont.ttf') format('truetype'),
+	url('../fonts/montserrat/montserrat-regular-webfont.svg#Montserrat Regular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Montserrat Semibold';
+	src:url('../fonts/montserrat/montserrat-semibold-webfont.eot');
+	src: url('../fonts/montserrat/montserrat-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/montserrat/montserrat-semibold-webfont.woff') format('woff'),
+	url('../fonts/montserrat/montserrat-semibold-webfont.ttf') format('truetype'),
+	url('../fonts/montserrat/montserrat-semibold-webfont.svg#Montserrat Semibold') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Montserrat Hairline';
+	src:url('../fonts/montserrat/montserrat-hairline-webfont.eot');
+	src: url('../fonts/montserrat/montserrat-hairline-webfont.eot?#iefix') format('embedded-opentype'),
+	url('../fonts/montserrat/montserrat-hairline-webfont.woff') format('woff'),
+	url('../fonts/montserrat/montserrat-hairline-webfont.ttf') format('truetype'),
+	url('../fonts/montserrat/montserrat-hairline-webfont.svg#Montserrat Hairline') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+/* TTF type */
+@font-face {
+	font-family: 'Digital Play Italic St';
+	src: url('../fonts/digital-play-st/Digital Play Italic St.ttf');
+}
+
+@font-face {
+	font-family: 'Backhill Free Version';
+	src: url('../fonts/Backhill-free/Backhill Free Version.ttf');
+}
+
+
+
+
+

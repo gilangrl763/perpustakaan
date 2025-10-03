@@ -1,0 +1,321 @@
+{
+	"mapwidth": "3004",
+	"mapheight": "1400",
+	"categories": [
+		{
+			"id": "lodges",
+			"title": "Lodges",
+			"icon": "images/lodge.png",
+			"show": "false",
+			"color": "#ae5c13"
+		},
+		{
+			"id": "condos",
+			"title": "Condos",
+			"icon": "images/condo.png",
+			"color": "#a89b00"
+		},
+		{
+			"id": "easy",
+			"title": "Easy trails",
+			"icon": "images/ski.png",
+			"color": "#0ea836"
+		},
+		{
+			"id": "medium",
+			"title": "Medium trails",
+			"icon": "images/ski.png",
+			"color": "#0086cf"
+		},
+		{
+			"id": "difficult",
+			"title": "Difficult trails",
+			"icon": "images/ski.png",
+			"color": "#666"
+		},
+		{
+			"id": "structures",
+			"title": "Structures",
+			"icon": "images/ski.png",
+			"color": "#f7ab49"
+		},
+		{
+			"id": "peaks",
+			"title": "Peaks and Elevations",
+			"icon": "images/peak.png",
+			"color": "#cb161d"
+		}
+	],
+	"levels": [
+		{
+			"id": "layer",
+			"name": "1",
+			"title": "Ski Map",
+			"map": "images/ski/ski.jpg",
+			"minimap": "images/ski/ski-small.jpg",
+			"show": "true",
+			"locations": [
+				{
+					"id": "whitecap",
+					"label": "White Cap",
+					"description": "White Cap elevation with snow patrol.",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.1398",
+					"y": "0.2900",
+					"zoom": "4"
+				},
+				{
+					"id": "lockemountain",
+					"label": "Locke Mountain",
+					"description": "Locke Mountain peak.",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.2473",
+					"y": "0.2240",
+					"zoom": "4"
+				},
+				{
+					"id": "barkermountain",
+					"label": "Barker Mountain",
+					"description": "Barker Mountain peak with snow patrol.",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.3412",
+					"y": "0.2142",
+					"zoom": "4"
+				},
+				{
+					"id": "sprucepeak",
+					"label": "Spruce Peak",
+					"description": "Spruce Peak with snow patrol.",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.4843",
+					"y": "0.1757",
+					"zoom": "4"
+				},
+				{
+					"id": "aurorapeak",
+					"label": "Aurora Peak",
+					"description": "Aurora Peak (535 m).",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.5659",
+					"y": "0.1414",
+					"zoom": "4"
+				},
+				{
+					"id": "oz",
+					"label": "Oz",
+					"description": "Oz peak (560m).",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.6830",
+					"y": "0.1",
+					"zoom": "4"
+				},
+				{
+					"id": "jordanbowl",
+					"label": "Jordan Bowl",
+					"description": "Jordan Bowl peak with snow patrol.",
+					"category": "peaks",
+					"pin": "false",
+					"x": "0.7446",
+					"y": "0.1064",
+					"zoom": "4"
+				},
+				{
+					"id": "whitecaplodge",
+					"label": "White Cap Lodge",
+					"description": "White Cap Lodge.",
+					"category": "lodges",
+					"pin": "false",
+					"x": "0.1288",
+					"y": "0.8964",
+					"zoom": "4"
+				},
+				{
+					"id": "peaklodge",
+					"label": "Peak Lodge",
+					"description": "Peak Lodge.",
+					"category": "lodges",
+					"pin": "false",
+					"x": "0.5672",
+					"y": "0.3642",
+					"zoom": "4"
+				},
+				{
+					"id": "bakerlodge",
+					"label": "Baker Lodge",
+					"description": "Baker Lodge.",
+					"category": "lodges",
+					"pin": "false",
+					"x": "0.3761",
+					"y": "0.6757",
+					"zoom": "4"
+				},
+				{
+					"id": "lockemountaintownhouses",
+					"label": "Locke Mountain Townhouses",
+					"description": "Locke Mountain Townhouses.",
+					"category": "condos",
+					"pin": "false",
+					"x": "0.2539",
+					"y": "0.6171",
+					"zoom": "4"
+				},
+				{
+					"id": "merrillbrookcondos",
+					"label": "Merrill Brook Condos",
+					"description": "Merrill Brook Condos.",
+					"category": "condos",
+					"pin": "false",
+					"x": "0.4257",
+					"y": "0.7857",
+					"zoom": "4"
+				},
+				{
+					"id": "sunrisecondos",
+					"label": "Sunrise Condos",
+					"description": "Sunrise Condos.",
+					"category": "condos",
+					"pin": "false",
+					"x": "0.3784",
+					"y": "0.7185",
+					"zoom": "4"
+				},
+				{
+					"id": "lowersundaypunch",
+					"label": "Lower Sunday Punch",
+					"description": "Lower Sunday Punch beginner trail.",
+					"category": "easy",
+					"pin": "false",
+					"x": "0.3981",
+					"y": "0.5335",
+					"zoom": "4"
+				},
+				{
+					"id": "roadrunner",
+					"label": "Roadrunner",
+					"description": "Roadrunner easy trail.",
+					"category": "easy",
+					"pin": "false",
+					"x": "0.2310",
+					"y": "0.7971",
+					"zoom": "4"
+				},
+				{
+					"id": "cyclone",
+					"label": "Cyclone",
+					"description": "Cyclone easy trail.",
+					"category": "easy",
+					"pin": "false",
+					"x": "0.6777",
+					"y": "0.2785",
+					"zoom": "4"
+				},
+				{
+					"id": "broadwayconnection",
+					"label": "Broadway Connection",
+					"description": "Broadway Connection easy trail.",
+					"category": "easy",
+					"pin": "false",
+					"x": "0.5416",
+					"y": "0.5271",
+					"zoom": "4"
+				},
+				{
+					"id": "lazyriver",
+					"label": "Lazy River",
+					"description": "Lazy River medium trail.",
+					"category": "medium",
+					"pin": "false",
+					"x": "0.4211",
+					"y": "0.3500",
+					"zoom": "4"
+				},
+				{
+					"id": "northernlights",
+					"label": "Northern Lights",
+					"description": "Northern Lights medium trail.",
+					"category": "medium",
+					"pin": "false",
+					"x": "0.6697",
+					"y": "0.2980",
+					"zoom": "4"
+				},
+				{
+					"id": "wildfire",
+					"label": "Wildfire",
+					"description": "Wildfire medium trail.",
+					"category": "medium",
+					"pin": "false",
+					"x": "0.2663",
+					"y": "0.5535",
+					"zoom": "4"
+				},
+				{
+					"id": "tempest",
+					"label": "Tempest",
+					"description": "Tempest difficult trail.",
+					"category": "difficult",
+					"pin": "false",
+					"x": "0.2173",
+					"y": "0.5642",
+					"zoom": "4"
+				},
+				{
+					"id": "rubypalace",
+					"label": "Ruby Palace",
+					"description": "Ruby Palace difficult trail.",
+					"category": "difficult",
+					"pin": "false",
+					"x": "0.7157",
+					"y": "0.2092",
+					"zoom": "4"
+				},
+				{
+					"id": "vortex",
+					"label": "Vortex",
+					"description": "Vortex difficult trail.",
+					"category": "difficult",
+					"pin": "false",
+					"x": "0.5549",
+					"y": "0.2857",
+					"zoom": "4"
+				},
+				{
+					"id": "halfpipe",
+					"label": "Halfpipe",
+					"description": "Halfpipe structure.",
+					"category": "structures",
+					"pin": "false",
+					"x": "0.3368",
+					"y": "0.5871",
+					"zoom": "4"
+				},
+				{
+					"id": "rockingchair",
+					"label": "Rocking Chair",
+					"description": "Rocking Chair.",
+					"category": "structures",
+					"pin": "false",
+					"x": "0.3808",
+					"y": "0.5414",
+					"zoom": "4"
+				},
+				{
+					"id": "southridgepark",
+					"label": "South Ridge Park",
+					"description": "South Ridge Park.",
+					"category": "structures",
+					"pin": "false",
+					"x": "0.4467",
+					"y": "0.7000",
+					"zoom": "4"
+				}
+			]
+		}
+	]
+}

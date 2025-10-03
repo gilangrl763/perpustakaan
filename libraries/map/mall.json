@@ -1,0 +1,275 @@
+{
+	"mapwidth": "800",
+	"mapheight": "600",
+	"categories": [
+		{
+			"id": "food",
+			"title": "Fast-foods & Restaurants",
+			"icon": "images/food.png",
+			"color": "#a6ce38",
+			"show": "false"
+		},
+		{
+			"id": "dep",
+			"title": "Department Stores",
+			"icon": "images/cart.png",
+			"color": "#ffcd33"
+		},
+		{
+			"id": "health",
+			"title": "Health & Cosmetics",
+			"icon": "images/health.png",
+			"color": "#e97b28"
+		},
+		{
+			"id": "clothing",
+			"title": "Clothing & Accessories",
+			"icon": "images/cloth.png",
+			"color": "#d8335b"
+		},
+		{
+			"id": "misc",
+			"title": "Miscellaneous",
+			"icon": "images/misc.png",
+			"color": "#963062"
+		}
+	],
+	"levels": [
+		{
+			"id": "basement",
+			"name": "-1",
+			"title": "Basement",
+			"map": "images/mall/mall-basement.svg",
+			"minimap": "images/mall/mall-basement-small.jpg",
+			"locations": [
+				{
+					"id": "petco",
+					"label": "Petco",
+					"description": "Lorem ipsum",
+					"category": "misc",
+					"thumbnail": "images/thumb/petco.jpg",
+					"x": "0.55",
+					"y": "0.3"
+				}
+			]
+		},
+		{
+			"id": "ground",
+			"name": "0",
+			"title": "Ground Floor",
+			"map": "images/mall/mall-ground.svg",
+			"minimap": "images/mall/mall-ground-small.jpg",
+			"show": "true",
+			"locations": [
+				{
+					"id": "applebees",
+					"label": "Applebee's",
+					"description": "See you tomorrow",
+					"category": "food",
+					"thumbnail": "images/thumb/applebees.jpg",
+					"x": "0.665",
+					"y": "0.41",
+					"zoom": "5"
+				},
+				{
+					"id": "kfc",
+					"label": "KFC",
+					"description": "Kentucky Fried Chicken",
+					"category": "food",
+					"thumbnail": "images/thumb/kfc.jpg",
+					"tooltip": "default",
+					"x": "0.6012",
+					"y": "0.32",
+					"zoom": "8"
+				},
+				{
+					"id": "mcdonalds",
+					"label": "McDonald's",
+					"description": "Additional information",
+					"category": "food",
+					"thumbnail": "images/thumb/mcdonalds.jpg",
+					"x": "0.615",
+					"y": "0.3416",
+					"zoom": "8"
+				},
+				{
+					"id": "pizzahut",
+					"label": "Pizza Hut",
+					"description": "Make it great",
+					"category": "food",
+					"thumbnail": "images/thumb/pizzahut.jpg",
+					"x": "0.59",
+					"y": "0.305",
+					"zoom": "8"
+				},
+				{
+					"id": "starbucks",
+					"label": "Starbucks",
+					"description": "The coffee company",
+					"category": "food",
+					"thumbnail": "images/thumb/starbucks.jpg",
+					"x": "0.775",
+					"y": "0.6833",
+					"zoom": "6"
+				},
+				{
+					"id": "subway",
+					"label": "Subway",
+					"description": "Eat fresh.",
+					"category": "food",
+					"thumbnail": "images/thumb/subway.jpg",
+					"x": "0.5625",
+					"y": "0.2166",
+					"zoom": "8"
+				},
+				{
+					"id": "sears",
+					"label": "Sears",
+					"description": "Sears department store",
+					"category": "dep",
+					"thumbnail": "images/thumb/sears.jpg",
+					"x": "0.165",
+					"y": "0.3",
+					"zoom": "3"
+				},
+				{
+					"id": "macys",
+					"label": "Macy's",
+					"description": "Macy's department store",
+					"category": "dep",
+					"thumbnail": "images/thumb/macys.jpg",
+					"x": "0.425",
+					"y": "0.4"
+				},
+				{
+					"id": "jcpenney",
+					"label": "JCPenney",
+					"description": "JCPenney department store",
+					"category": "dep",
+					"thumbnail": "images/thumb/jcpenney.jpg",
+					"x": "0.4125",
+					"y": "0.7416"
+				},
+				{
+					"id": "cvs",
+					"label": "CVS Pharmacy",
+					"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+					"category": "health",
+					"thumbnail": "images/thumb/cvs.jpg",
+					"x": "0.6187",
+					"y": "0.45"
+				},
+				{
+					"id": "walgreens",
+					"label": "Walgreens",
+					"description": "At the corner of Happy & Healthy",
+					"category": "health",
+					"thumbnail": "images/thumb/walgreens.jpg",
+					"x": "0.275",
+					"y": "0.3666"
+				},
+				{
+					"id": "sephora",
+					"label": "Sephora",
+					"description": "Makeup, fragrance, skincare",
+					"category": "health",
+					"thumbnail": "images/thumb/sephora.jpg",
+					"link": "http://www.scriptgates.com",
+					"x": "0.5125",
+					"y": "0.7416"
+				},
+				{
+					"id": "belk",
+					"label": "Belk",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/belk.jpg",
+					"image": "images/villa.png",
+					"x": "0.4625",
+					"y": "0.5416"
+				},
+				{
+					"id": "hm",
+					"label": "H&M",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/hm.jpg",
+					"x": "0.5625",
+					"y": "0.6866"
+				},
+				{
+					"id": "oldnavy",
+					"label": "Old Navy",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/oldnavy.jpg",
+					"x": "0.4287",
+					"y": "0.2066"
+				},
+				{
+					"id": "sportchek",
+					"label": "Sport Chek",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/sportchek.jpg",
+					"x": "0.27",
+					"y": "0.2333"
+				},
+				{
+					"id": "zara",
+					"label": "Zara",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/zara.jpg",
+					"x": "0.55",
+					"y": "0.3666"
+				}
+			]
+		},
+		{
+			"id": "first",
+			"name": "1",
+			"title": "First Floor",
+			"map": "images/mall/mall-first.svg",
+			"minimap": "images/mall/mall-first-small.jpg",
+			"locations": [
+				{
+					"id": "gap",
+					"label": "GAP",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/gap.jpg",
+					"x": "0.4375",
+					"y": "0.425"
+				},
+				{
+					"id": "pullbear",
+					"label": "Pull & Bear",
+					"description": "Lorem ipsum",
+					"category": "clothing",
+					"thumbnail": "images/thumb/pullbear.jpg",
+					"x": "0.3625",
+					"y": "0.25"
+				},
+				{
+					"id": "amc",
+					"label": "AMC Theatres",
+					"description": "Additional information",
+					"category": "misc",
+					"thumbnail": "images/thumb/amc.jpg",
+					"x": "0.6087",
+					"y": "0.305"
+				},
+				{
+					"id": "att",
+					"label": "AT&T",
+					"description": "Additional information",
+					"category": "misc",
+					"thumbnail": "images/thumb/att.jpg",
+					"x": "0.4287",
+					"y": "0.2083"
+				}
+			]
+		}
+	]
+}
