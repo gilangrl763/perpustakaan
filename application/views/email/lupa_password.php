@@ -2,497 +2,267 @@
 include_once("functions/string.func.php");
 include_once("functions/date.func.php");
 
-$reqId 			= $reqId;
-$reqPassword 	= $reqPassword;
-
 $this->load->model("UserLogin");
+$this->load->model("Perusahaan");
+$perusahaan = new Perusahaan();
 $user_login = new UserLogin();
-$user_login->selectByParams(array("A.USER_LOGIN_ID" => $reqId));
+
+$reqId 		   = $reqParse1;
+$reqPassword   = $reqParse2;
+
+$user_login->selectByParamsMonitoring(array("A.USER_LOGIN_ID"=>$reqId));
 $user_login->firstRow();
 
+
+$perusahaan->selectByParams(array("A.PERUSAHAAN_ID"=>"1"));
+$perusahaan->firstRow();
+$PERUSAHAAN_NAMA        = $perusahaan->getField("NAMA");
+$PERUSAHAAN_ALAMAT      = $perusahaan->getField("ALAMAT");
+$PERUSAHAAN_TELEPON     = $perusahaan->getField("TELEPON");
+$PERUSAHAAN_EMAIL       = $perusahaan->getField("EMAIL");
+$PERUSAHAAN_WEBSITE     = $perusahaan->getField("WEBSITE");
 ?>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="format-detection" content="telephone=no" /> <!-- disable auto telephone linking in iOS -->
-		<title>Email</title>
-		<style type="text/css">
-			/* RESET STYLES */
-			html { background-color:#E1E1E1; margin:0; padding:0; }
-			body, #bodyTable, #bodyCell, #bodyCell{height:100% !important; margin:0; padding:0; width:100% !important;font-family:Helvetica, Arial, "Lucida Grande", sans-serif;}
-			table{border-collapse:collapse;}
-			table[id=bodyTable] {width:100%!important;margin:auto;max-width:500px!important;color:#7A7A7A;font-weight:normal;}
-			img, a img{border:0; outline:none; text-decoration:none;height:auto; line-height:100%;}
-			a {text-decoration:none !important;border-bottom: 1px solid;}
-			h1, h2, h3, h4, h5, h6{color:#5F5F5F; font-weight:normal; font-family:Helvetica; font-size:20px; line-height:125%; text-align:Left; letter-spacing:normal;margin-top:0;margin-right:0;margin-bottom:10px;margin-left:0;padding-top:0;padding-bottom:0;padding-left:0;padding-right:0;}
-			/* CLIENT-SPECIFIC STYLES */
-			.ReadMsgBody{width:100%;} .ExternalClass{width:100%;} /* Force Hotmail/Outlook.com to display emails at full width. */
-			.ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td, .ExternalClass div{line-height:100%;} /* Force Hotmail/Outlook.com to display line heights normally. */
-			table, td{mso-table-lspace:0pt; mso-table-rspace:0pt;} /* Remove spacing between tables in Outlook 2007 and up. */
-			#outlook a{padding:0;} /* Force Outlook 2007 and up to provide a "view in browser" message. */
-			img{-ms-interpolation-mode: bicubic;display:block;outline:none; text-decoration:none;} /* Force IE to smoothly render resized images. */
-			body, table, td, p, a, li, blockquote{-ms-text-size-adjust:100%; -webkit-text-size-adjust:100%; font-weight:normal!important;} /* Prevent Windows- and Webkit-based mobile platforms from changing declared text sizes. */
-			.ExternalClass td[class="ecxflexibleContainerBox"] h3 {padding-top: 10px !important;} /* Force hotmail to push 2-grid sub headers down */
-			/* /\/\/\/\/\/\/\/\/ TEMPLATE STYLES /\/\/\/\/\/\/\/\/ */
-			/* ========== Page Styles ========== */
-			h1{display:block;font-size:26px;font-style:normal;font-weight:normal;line-height:100%;}
-			h2{display:block;font-size:20px;font-style:normal;font-weight:normal;line-height:120%;}
-			h3{display:block;font-size:17px;font-style:normal;font-weight:normal;line-height:110%;}
-			h4{display:block;font-size:18px;font-style:italic;font-weight:normal;line-height:100%;}
-			.flexibleImage{height:auto;}
-			.linkRemoveBorder{border-bottom:0 !important;}
-			table[class=flexibleContainerCellDivider] {padding-bottom:0 !important;padding-top:0 !important;}
-			body, #bodyTable{background-color:#E1E1E1;}
-			#emailHeader{background-color:#E1E1E1;}
-			#emailBody{background-color:#FFFFFF;}
-			#emailFooter{background-color:#E1E1E1;}
-			.nestedContainer{background-color:#F8F8F8; border:1px solid #CCCCCC;}
-			.emailButton{background-color:#205478; border-collapse:separate;}
-			.buttonContent{color:#FFFFFF; font-family:Helvetica; font-size:18px; font-weight:bold; line-height:100%; padding:15px; text-align:center;}
-			.buttonContent a{color:#FFFFFF; display:block; text-decoration:none!important; border:0!important;}
-			.emailCalendar{background-color:#FFFFFF; border:1px solid #CCCCCC;}
-			.emailCalendarMonth{background-color:#205478; color:#FFFFFF; font-family:Helvetica, Arial, sans-serif; font-size:16px; font-weight:bold; padding-top:10px; padding-bottom:10px; text-align:center;}
-			.emailCalendarDay{color:#205478; font-family:Helvetica, Arial, sans-serif; font-size:60px; font-weight:bold; line-height:100%; padding-top:20px; padding-bottom:20px; text-align:center;}
-			.imageContentText {margin-top: 10px;line-height:0;}
-			.imageContentText a {line-height:0;}
-			#invisibleIntroduction {display:none !important;} /* Removing the introduction text from the view */
-			/*FRAMEWORK HACKS & OVERRIDES */
-			span[class=ios-color-hack] a {color:#275100!important;text-decoration:none!important;} /* Remove all link colors in IOS (below are duplicates based on the color preference) */
-			span[class=ios-color-hack2] a {color:#205478!important;text-decoration:none!important;}
-			span[class=ios-color-hack3] a {color:#8B8B8B!important;text-decoration:none!important;}
-			/* A nice and clean way to target phone numbers you want clickable and avoid a mobile phone from linking other numbers that look like, but are not phone numbers.  Use these two blocks of code to "unstyle" any numbers that may be linked.  The second block gives you a class to apply with a span tag to the numbers you would like linked and styled.
-			Inspired by Campaign Monitor's article on using phone numbers in email: http://www.campaignmonitor.com/blog/post/3571/using-phone-numbers-in-html-email/.
-			*/
-			.a[href^="tel"], a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:none!important;cursor:default!important;}
-			.mobile_link a[href^="tel"], .mobile_link a[href^="sms"] {text-decoration:none!important;color:#606060!important;pointer-events:auto!important;cursor:default!important;}
-			/* MOBILE STYLES */
-			@media only screen and (max-width: 480px){
-				/*////// CLIENT-SPECIFIC STYLES //////*/
-				body{width:100% !important; min-width:100% !important;} /* Force iOS Mail to render the email at full width. */
-				/* FRAMEWORK STYLES */
-				/*
-				CSS selectors are written in attribute
-				selector format to prevent Yahoo Mail
-				from rendering media query styles on
-				desktop.
-				*/
-				/*td[class="textContent"], td[class="flexibleContainerCell"] { width: 100%; padding-left: 10px !important; padding-right: 10px !important; }*/
-				table[id="emailHeader"],
-				table[id="emailBody"],
-				table[id="emailFooter"],
-				table[class="flexibleContainer"],
-				td[class="flexibleContainerCell"] {width:100% !important;}
-				td[class="flexibleContainerBox"], td[class="flexibleContainerBox"] table {display: block;width: 100%;text-align: left;}
-				/*
-				The following style rule makes any
-				image classed with 'flexibleImage'
-				fluid when the query activates.
-				Make sure you add an inline max-width
-				to those images to prevent them
-				from blowing out.
-				*/
-				td[class="imageContent"] img {height:auto !important; width:100% !important; max-width:100% !important; }
-				img[class="flexibleImage"]{height:auto !important; width:100% !important;max-width:100% !important;}
-				img[class="flexibleImageSmall"]{height:auto !important; width:auto !important;}
-				/*
-				Create top space for every second element in a block
-				*/
-				table[class="flexibleContainerBoxNext"]{padding-top: 10px !important;}
-				/*
-				Make buttons in the email span the
-				full width of their container, allowing
-				for left- or right-handed ease of use.
-				*/
-				table[class="emailButton"]{width:100% !important;}
-				td[class="buttonContent"]{padding:0 !important;}
-				td[class="buttonContent"] a{padding:15px !important;}
-			}
-			/*  CONDITIONS FOR ANDROID DEVICES ONLY
-			*   http://developer.android.com/guide/webapps/targeting.html
-			*   http://pugetworks.com/2011/04/css-media-queries-for-targeting-different-mobile-devices/ ;
-			=====================================================*/
-			@media only screen and (-webkit-device-pixel-ratio:.75){
-				/* Put CSS for low density (ldpi) Android layouts in here */
-			}
-			@media only screen and (-webkit-device-pixel-ratio:1){
-				/* Put CSS for medium density (mdpi) Android layouts in here */
-			}
-			@media only screen and (-webkit-device-pixel-ratio:1.5){
-				/* Put CSS for high density (hdpi) Android layouts in here */
-			}
-			/* end Android targeting */
-			/* CONDITIONS FOR IOS DEVICES ONLY
-			=====================================================*/
-			@media only screen and (min-device-width : 320px) and (max-device-width:568px) {
-			}
-			/* end IOS targeting */
-		</style>
-		<!--
-			Outlook Conditional CSS
-			These two style blocks target Outlook 2007 & 2010 specifically, forcing
-			columns into a single vertical stack as on mobile clients. This is
-			primarily done to avoid the 'page break bug' and is optional.
-			More information here:
-			http://templates.mailchimp.com/development/css/outlook-conditional-css
-		-->
-		<!--[if mso 12]>
-			<style type="text/css">
-				.flexibleContainer{display:block !important; width:100% !important;}
-			</style>
-		<![endif]-->
-		<!--[if mso 14]>
-			<style type="text/css">
-				.flexibleContainer{display:block !important; width:100% !important;}
-			</style>
-		<![endif]-->
-	    
-	    <style>
-		.title-career{
-			text-align:center;
-			font-weight:normal;
-			font-family:Helvetica,Arial,sans-serif;
-			font-size:22px;
-			margin-bottom:15px;
-			color:#205478;
-			line-height:135%; 
-			border-top:1px solid #2b8dce; 
-			border-bottom:1px solid #2b8dce; 
-			padding-top:10px; 
-			padding-bottom:7px;
-		}
-		.title-career img{
-			vertical-align:middle;
-			display:inline-block;
-			margin-right:5px;
-		}
-		
-		/****/
-		.note-perhatian{
-			text-align:left;
-			font-family:Helvetica,Arial,sans-serif;
-			font-size:15px;
-			margin-bottom:0;
-			color:#FFFFFF;
-			line-height:135%;
-		}
-		.note-perhatian ul{
-			*border:1px solid red;
-			padding:0 0;
-			list-style-position:inside;
-			list-style:none;
-		}
-		.note-perhatian ul li {
-			*list-style-type: disc;
-			*list-style-position: inside;
-			*text-indent: -1em;
-			*padding-left: 1em;
-			padding:10px;
-			background:#575757;
-			margin-bottom:1px;
-		}
-		.note-perhatian ul li:nth-child(1) {
-			*background:#575757;
-		}
-		</style>
-	</head>
-	<body bgcolor="#E1E1E1" leftmargin="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Notification</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <style type="text/css">
+        @media screen {
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 400;
+                src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v11/qIIYRU-oROkIk8vfvxw6QvesZW2xOQ-xsNqO47m55DA.woff) format('woff');
+            }
 
-		<!-- CENTER THE EMAIL // -->
-		<!--
-		1.  The center tag should normally put all the
-			content in the middle of the email page.
-			I added "table-layout: fixed;" style to force
-			yahoomail which by default put the content left.
-		2.  For hotmail and yahoomail, the contents of
-			the email starts from this center, so we try to
-			apply necessary styling e.g. background-color.
-		-->
-		<center style="background-color:#E1E1E1;">
-			<table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" id="bodyTable" style="table-layout: fixed;max-width:100% !important;width: 100% !important;min-width: 100% !important;">
-				<tr>
-					<td align="center" valign="top" id="bodyCell">
+            @font-face {
+                font-family: 'Lato';
+                font-style: normal;
+                font-weight: 700;
+                src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v11/qdgUG4U09HnJwhYI-uK18wLUuEpTyoUstqEm5AMlJo4.woff) format('woff');
+            }
 
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 400;
+                src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v11/RYyZNoeFgb0l7W3Vu1aSWOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
+            }
 
-						<!-- EMAIL BODY // -->
-						<!--
-							The table "emailBody" is the email's container.
-							Its width can be set to 100% for a color band
-							that spans the width of the page.
-						-->
-						<table bgcolor="#FFFFFF"  border="0" cellpadding="0" cellspacing="0" width="500" id="emailBody">
+            @font-face {
+                font-family: 'Lato';
+                font-style: italic;
+                font-weight: 700;
+                src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v11/HkF_qI1x_noxlxhrhMQYELO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+            }
+        }
 
-							<!-- MODULE ROW // -->
-							<!--
-								To move or duplicate any of the design patterns
-								in this email, simply move or copy the entire
-								MODULE ROW section for each content block.
-							-->
-							<tr>
-								<td align="center" valign="top">
-									<!-- CENTERING TABLE // -->
-									<!--
-										The centering table keeps the content
-										tables centered in the emailBody table,
-										in case its width is set to 100%.
-									-->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%" style="color:#FFFFFF;" bgcolor="#e9e9e9">
-										<tr>
-											<td align="center" valign="top">
-												<!-- FLEXIBLE CONTAINER // -->
-												<!--
-													The flexible container has a set width
-													that gets overridden by the media query.
-													Most content tables within can then be
-													given 100% widths.
-												-->
-												<table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-													<tr>
-														<td align="center" valign="top" width="500" class="flexibleContainerCell">
+        /* CLIENT-SPECIFIC STYLES */
+        body,
+        table,
+        td,
+        a {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
 
-															<!-- CONTENT TABLE // -->
-															<!--
-															The content table is the first element
-																that's entirely separate from the structural
-																framework of the email.
-															-->
-															<table border="0" cellpadding="30" cellspacing="0" width="100%">
-																<tr>
-																	<td align="center" valign="top" class="textContent">
-																		<h1 style="color:#FFFFFF;line-height:100%;font-family:Helvetica,Arial,sans-serif;font-size:35px;font-weight:normal;margin-bottom:5px;text-align:center;"><img src="https://ap1.co.id/contents/logo/large/ori-logo-ap-corp.png" style="margin:0 auto;" /></h1>
-																		
-                                                                        <h2 class="title-career" style="text-align:center;font-weight:normal;font-family:Helvetica,Arial,sans-serif;font-size:18px;margin-bottom:15px;color:#205478;line-height:135%; border-top:1px solid #2b8dce; border-bottom:1px solid #2b8dce; padding-top:10px;padding-bottom:7px;">Subsidiary Integration Portal (SIP)<br>PT Angkasa Pura I (Persero)</h2>
+        table,
+        td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
 
-                                                                        <div style="text-align:center;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#000; text-transform:uppercase; letter-spacing:2px; line-height:135%;">NOTIFIKASI RESET PASSWORD</div>
-																	</td>
-																</tr>
-															</table>
-															<!-- // CONTENT TABLE -->
-														</td>
-													</tr>
-												</table>
-												<!-- // FLEXIBLE CONTAINER -->
-											</td>
-										</tr>
-									</table>
-									<!-- // CENTERING TABLE -->
-								</td>
-							</tr>
-							<!-- // MODULE ROW -->
+        .bg-gradient {
+            background: rgb(113 193 58);
+            background: linear-gradient(90deg, rgb(113 193 58) 0%, rgb(0 163 219) 100%);
+        }
 
+        img {
+            -ms-interpolation-mode: bicubic;
+        }
 
-							<!-- MODULE ROW // -->
-							<!--  The "mc:hideable" is a feature for MailChimp which allows
-								you to disable certain row. It works perfectly for our row structure.
-								http://kb.mailchimp.com/article/template-language-creating-editable-content-areas/
-							-->
-							<!-- MODULE ROW // -->
-							<tr>
-								<td align="center" valign="top">
-									<!-- CENTERING TABLE // -->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%" bgcolor="#F8F8F8">
-										<tr>
-											<td align="center" valign="top">
-												<!-- FLEXIBLE CONTAINER // -->
-												<table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-													<tr>
-														<td align="center" valign="top" width="500" class="flexibleContainerCell">
-															<table border="0" cellpadding="30" cellspacing="0" width="100%">
-																<tr>
-																	<td align="center" valign="top">
+        /* RESET STYLES */
+        img {
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
 
-																		<!-- CONTENT TABLE // -->
-																		<table border="0" cellpadding="0" cellspacing="0" width="100%">
-																			<tr>
-																				<td valign="top" class="textContent">
-																					<!--
-																						The "mc:edit" is a feature for MailChimp which allows
-																						you to edit certain row. It makes it easy for you to quickly edit row sections.
-																						http://kb.mailchimp.com/templates/code/create-editable-content-areas-with-mailchimps-template-language
-																					-->
-																					<!-- <h3 mc:edit="header" style="color:#5F5F5F;line-height:125%;font-family:Helvetica,Arial,sans-serif;font-size:16px;font-weight:normal;margin-top:0;margin-bottom:3px;text-align:left;">Notifikasi Reset Password</h3> -->
-																					<div mc:edit="body" style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;line-height:135%;">
-																					  <p>Yth. Bapak/Ibu<br><b><?=$user_login->getField("NAMA")?></b><br>di -tempat<p/>
-																					  <p>Reset password pada sistem Subsidiary Integration Portal (SIP) PT Angkasa Pura I (Persero) dengan data sebagai berikut :</p>
-                                                                                      <table style="text-align:left;font-family:Helvetica,Arial,sans-serif;font-size:15px;margin-bottom:0;color:#5F5F5F;">
-                                                                                      	<tr>
-                                                                                        	<td>Nama</td>
-                                                                                        	<td>:</td>
-                                                                                        	<td><?=$user_login->getField("NAMA")?></td>
-                                                                                        </tr>
-                                                                                      	<tr>
-                                                                                        	<td>E-mail</td>
-                                                                                        	<td>:</td>
-                                                                                        	<td><?=$user_login->getField("EMAIL")?></td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                        	<td>Password Baru</td>
-                                                                                        	<td>:</td>
-                                                                                        	<td><?=$reqPassword?></td>
-                                                                                        </tr>
-                                                                                      </table>
+        table {
+            border-collapse: collapse !important;
+        }
 
-                                                                                      	<p>Telah berhasil di reset, harap menjaga kerahasiaan data anda dengan baik. Silahkan login dengan password terbaru anda, kemudian ubah password anda pada sistem <a href="<?=base_url()?>">Subsidiary Integration Portal (SIP)</a> untuk keamanan.</p>
+        body {
+            height: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+        }
 
-                                                                                      	<table border="0" cellpadding="0" cellspacing="0" width="50%" class="emailButton" style="background-color: #0E3DCE; border-collapse:collapse; width:100%; text-align:center; margin:20px auto">
-	                                                                                      	<tr>
-	                                                                                          	<td align="center" valign="middle" class="buttonContent" style="padding-top:10px;padding-bottom:10px;padding-right:10px;padding-left:10px;">
-	                                                                                              	<a style="color:#fff;text-decoration:none;font-family:Helvetica,Arial,sans-serif;font-size:16px;line-height:135%;" href="<?=base_url()?>" target="_blank">Menuju Aplikasi</a>
-	                                                                                          	</td>
-	                                                                                      	</tr>
-	                                                                                 	</table>
+        /* iOS BLUE LINKS */
+        a[x-apple-data-detectors] {
+            color: inherit !important;
+            text-decoration: none !important;
+            font-size: inherit !important;
+            font-family: inherit !important;
+            font-weight: inherit !important;
+            line-height: inherit !important;
+        }
 
-                                                                                      	<p><b><i>Mohon simpan dan jaga kerahasiaan USER ID tersebut!</i></b></p>
+        /* MOBILE STYLES */
+        @media screen and (max-width:700px) {
+            h1 {
+                font-size: 32px !important;
+                line-height: 32px !important;
+            }
+        }
 
-                                                                                      	<p style="text-align:justify;color:#5F5F5F">Apabila ada perihal yang ingin ditanyakan lebih lanjut terkait sistem, Anda dapat mengajukan pertanyaan melalui email kepada helpdesk-sip@ap1.co.id</b>.</p>
+        /* ANDROID CENTER FIX */
+        div[style*="margin: 16px 0;"] {
+            margin: 0 !important;
+        }
+    </style>
+</head>
 
-	                                                                                 	<p style="text-align:justify;color:#5F5F5F">Demikian disampaikan, atas perhatian dan kerjasamanya diucapkan terima kasih.</p>
+<body style="background-color: #f4f4f4; margin: 0 !important; padding: 0 !important;">
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <!-- LOGO -->
+        <tr>
+            <td bgcolor="#17c2a0" align="center">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 700px;">
+                    <tr>
+                        <td align="center" valign="top" style="padding: 40px 10px 40px 10px;"> </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#17c2a0" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 700px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" valign="top" style="padding: 40px 20px 20px 30px; border-radius: 0px 0px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 48px; font-weight: 400; letter-spacing: 4px; line-height: 48px;">
+                            <!-- <img src="<?=base_url()?>uploads/<?=$PERUSAHAAN_LOGO?>" width="200px" height="*" style="display: block; border: 0px;" /> -->
+                            <img src="https://static.wikia.nocookie.net/logopedia/images/9/98/Trans_Marga_Jateng.png/revision/latest?cb=20191003012927" width="200px" height="*" style="display: block; border: 0px;" />
+                        </td>
+                        <td bgcolor="#ffffff" align="right" valign="top" style="padding: 40px 30px 20px 20px; border-radius: 0px 0px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 2px; line-height: 48px;">
+                            <p style="margin: 0;"><a href="<?=$PERUSAHAAN_WEBSITE?>" target="_blank" style="color: #17c2a0;"><?=$PERUSAHAAN_WEBSITE?></a></p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" bgcolor="#ffffff" align="center" valign="top" style="padding: 0px 30px 20px 30px; border-radius: 0px 0px 0px 0px; color: #111111; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; letter-spacing: 2px; line-height: 48px;">
+                            <h2 style="text-align:center;font-weight:normal;font-family:'Lato', Helvetica, Arial, sans-serif;font-size:22px;margin-bottom:15px;color:#205478;line-height:135%; border-top:1px solid #9d9fa1; border-bottom:1px solid #9d9fa1; padding-top:10px;padding-bottom:7px;">Aplikasi Manajemen Kearsipan</h2>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 700px;">
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 10px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">
+                                Kepada Yth.
+                                <br><b>Bapak/Ibu <?=$user_login->getField("NAMA_PEGAWAI")?></b>
+                                <br>di
+                                <br>&nbsp;&nbsp;-tempat
+                            </p>
+                            <p style="margin: 30px 0px 0px;">
+                                Dengan hormat,
+                                <br>Bersama dengan ini, kami sampaikan terdadapt Reset Password pada sistem <i>Aplikasi Manajemen Kearsipan</i>. Berikut USER ID terbaru Anda :
+                            </p>
+                            <p style="margin: 10px 0px 0px;">
+                                <table style="text-align:left;font-family:'Lato', Helvetica, Arial, sans-serif;font-size:14px;margin-bottom:0;color:#666666;">
+	                              	<tr>
+	                                	<td>Nama</td>
+	                                	<td>:</td>
+	                                	<td><?=$user_login->getField("NAMA_PEGAWAI")?></td>
+	                                </tr>
+	                              	<tr>
+	                                	<td>User Login</td>
+	                                	<td>:</td>
+	                                	<td><?=$user_login->getField("USER_LOGIN")?></td>
+	                                </tr>
+	                                <tr>
+	                                	<td>Password Baru</td>
+	                                	<td>:</td>
+	                                	<td><?=$reqPassword?></td>
+	                                </tr>
+	                            </table>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td bgcolor="#ffffff" align="left">
+                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tr>
+                                    <td bgcolor="#ffffff" align="center" style="padding: 0px 30px 10px 30px;">
+                                        <table border="0" cellspacing="0" cellpadding="0">
+                                            <tr>
+                                                <td bgcolor="#0158b1" align="center" style="border-radius: 3px;"><a href="<?=base_url()?>" target="_blank" style="font-size: 18px; font-family: 'Lato', Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 15px 25px; border-radius: 2px; display: inline-block;letter-spacing: 3px;">MENUJU APLIKASI</a></td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr> <!-- COPY -->
+                    <tr>
+                        <td bgcolor="#ffffff" align="left" style="padding: 20px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 14px; font-weight: 400; line-height: 25px;">
+                            <p style="margin: 0;">
+                                Harap menjaga kerahasiaan dan keamanan USER ID Anda dengan baik. Silahkan login ke sistem menggunakan USER ID tersebut, serta silahkan segera perbarui Password Anda sesuai dengan ketentuan berlaku untuk keamanan.
+                            </p>
+                            <p style="margin: 10px 0px 0px;">
+                                Demikian disampaikan, atas perhatian dan kerjasamanya diucapkan terima kasih.
+                            </p>
+                            <p style="margin: 30px 0px 0px;">
+                                <i><b>Salam hormat,</b></i>
+                                <br>Administrator Aplikasi Manajemen Kearsipan
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 15px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 700px;">
+                    <tr>
+                        <td bgcolor="#0158b1" align="left" style="width:70%; padding: 20px 30px 20px 30px; border-radius: 4px 10px 10px 4px; color: #f3f3f3; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 11.5px; font-weight: 400; line-height: 18px;">
+                            <p style="margin: 0;">
+                                <span style="font-size: 13.5px;font-weight: 700;"><?=$PERUSAHAAN_NAMA?></span>
+                                <br><?=$PERUSAHAAN_ALAMAT?>
+                                <br>Telp. <?=$PERUSAHAAN_TELEPON?>
+                            </p>
+                        </td>
+                        <td bgcolor="#17c2a0" align="left" style="width:30%; padding: 20px 30px 20px 30px; border-radius: 10px 4px 4px 10px; color: #f3f3f3; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 11.5px; font-weight: 400; line-height: 18px;">
+                            <p style="margin: 0;">
+                                <i>Info lebih lanjut :</i>
+                                <br><a href="<?=$PERUSAHAAN_EMAIL?>" target="_blank" style="color: #f3f3f3;text-decoration:none;"><?=$PERUSAHAAN_EMAIL?></a>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr>
+            <td bgcolor="#f4f4f4" align="center" style="padding: 0px 10px 0px 10px;">
+                <table border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width: 700px;">
+                    <tr>
+                        <td bgcolor="#f4f4f4" align="left" style="padding: 0px 30px 30px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 12px; font-weight: 400; line-height: 18px;"> <br>
+                            <p style="margin: 0;">&#169; <?=date("Y")?>. All rights reserved</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
 
-	                                                                                	<p style="color:#5F5F5F;margin-top:50px;"><b>Best Regards,</b></p>
-	                                                                           		
-	                                                                                	<p style="text-align:justify;font-size: 11px;color:#5F5F5F"><b><i>Subsidiary Integration Portal (SIP)</i></b><br><b>PT Angkasa Pura I (Persero)</b><br>Kantor Pusat Jakarta<br>Kota Baru Bandar Kemayoran Blok B 12 Kav. 2<br>Jakarta 10610, Indonesia</p>
-																					</div>
-																				</td>
-																			</tr>
-																		</table>
-																		<!-- // CONTENT TABLE -->
-
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-												<!-- // FLEXIBLE CONTAINER -->
-											</td>
-										</tr>
-									</table>
-									<!-- // CENTERING TABLE -->
-								</td>
-							</tr>
-							<!-- // MODULE ROW -->							
-
-							<!-- MODULE DIVIDER // -->
-							<tr>
-								<td align="center" valign="top">
-									<!-- CENTERING TABLE // -->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%">
-										<tr>
-											<td align="center" valign="top">
-												<!-- FLEXIBLE CONTAINER // -->
-												<table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-													<tr>
-														<td align="center" valign="top" width="500" class="flexibleContainerCell">
-															<table class="flexibleContainerCellDivider" border="0" cellpadding="30" cellspacing="0" width="100%">
-																<tr>
-																	<td align="center" valign="top" style="padding-top:0px;padding-bottom:0px;">
-
-																		<!-- CONTENT TABLE // -->
-																		<table border="0" cellpadding="0" cellspacing="0" width="100%">
-																			<tr>
-																				<td align="center" valign="top" style="border-top:1px solid #C8C8C8;"></td>
-																			</tr>
-																		</table>
-																		<!-- // CONTENT TABLE -->
-
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-												<!-- // FLEXIBLE CONTAINER -->
-											</td>
-										</tr>
-									</table>
-									<!-- // CENTERING TABLE -->
-								</td>
-							</tr>
-							<!-- // END -->
-
-							<!-- MODULE ROW // -->
-							<tr>
-								<td align="center" valign="top">
-									<!-- CENTERING TABLE // -->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%">
-										<tr>
-											<td align="center" valign="top">
-												<!-- FLEXIBLE CONTAINER // -->
-												<table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-													<tr>
-														<td valign="top" width="500" class="flexibleContainerCell">
-
-
-														</td>
-													</tr>
-												</table>
-												<!-- // FLEXIBLE CONTAINER -->
-											</td>
-										</tr>
-									</table>
-									<!-- // CENTERING TABLE -->
-								</td>
-							</tr>
-							<!-- // MODULE ROW -->
-						</table>
-						<!-- // END -->
-
-
-						<!-- EMAIL FOOTER // -->
-						<!--
-							The table "emailBody" is the email's container.
-							Its width can be set to 100% for a color band
-							that spans the width of the page.
-						-->
-						<table bgcolor="#E1E1E1" border="0" cellpadding="0" cellspacing="0" width="500" id="emailFooter">
-
-							<!-- FOOTER ROW // -->
-							<!--
-								To move or duplicate any of the design patterns
-								in this email, simply move or copy the entire
-								MODULE ROW section for each content block.
-							-->
-							<tr>
-								<td align="center" valign="top">
-									<!-- CENTERING TABLE // -->
-									<table border="0" cellpadding="0" cellspacing="0" width="100%">
-										<tr>
-											<td align="center" valign="top">
-												<!-- FLEXIBLE CONTAINER // -->
-												<table border="0" cellpadding="0" cellspacing="0" width="500" class="flexibleContainer">
-													<tr>
-														<td align="center" valign="top" width="500" class="flexibleContainerCell">
-															<table border="0" cellpadding="30" cellspacing="0" width="100%">
-																<tr>
-																	<td valign="top" bgcolor="#E1E1E1">
-
-																		<div style="font-family:Helvetica,Arial,sans-serif;font-size:13px;color:#828282;text-align:center;line-height:120%;">
-																			<div>Copyright &#169; <?=date("Y")?> <a href="<?=base_url()?>" target="_blank" style="text-decoration:none;color:#828282;"><span style="color:#828282;">Subsidiary Integration Portal (SIP) - PT Angkasa Pura I (Persero)</span></a>. All&nbsp;rights&nbsp;reserved.</div>
-																		</div>
-
-																	</td>
-																</tr>
-															</table>
-														</td>
-													</tr>
-												</table>
-												<!-- // FLEXIBLE CONTAINER -->
-											</td>
-										</tr>
-									</table>
-									<!-- // CENTERING TABLE -->
-								</td>
-							</tr>
-
-						</table>
-						<!-- // END -->
-
-					</td>
-				</tr>
-			</table>
-		</center>
-	</body>
 </html>
