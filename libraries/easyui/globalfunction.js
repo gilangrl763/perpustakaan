@@ -1031,7 +1031,7 @@ function deleteData(delete_link, id, reload_link)
 				$.messager.alertLink('Informasi',data, 'info', '', reload_link);
 			})
 			.fail(function() {
-				alert("error");
+				$.messager.alert('Info', 'Kesalahan!', 'info');
 			});								
 		}
 	});				
@@ -1039,17 +1039,19 @@ function deleteData(delete_link, id, reload_link)
 
 function deleteDataTable(delete_link, id, elementId)
 {
-	$.messager.confirm('Konfirmasi','Yakin menghapus data terpilih ?',function(r){
+	$.messager.confirm('Konfirmasi','Yakin menghapus data terpilih?',function(r){
 		if (r){
-			var jqxhr = $.get(delete_link+'?reqId='+id, function() 
+			var jqxhr = $.get(delete_link+'?reqId='+id, function(data) 
 			{
+				$.messager.alert('Info', data, 'info');
 				$("#"+elementId).remove();
 			})
-			.done(function() {
+			.done(function(data) {
+				$.messager.alert('Info', data, 'info');
 				$("#"+elementId).remove();
 			})
 			.fail(function() {
-				alert("error");
+				$.messager.alert('Info', 'Kesalahan!', 'info');
 			});								
 		}
 	});
@@ -1066,7 +1068,7 @@ function konfirmasiData(url_link, id, pesan, reload_link)
 				$.messager.alertLink('Informasi',data, 'info', '', reload_link);
 			})
 			.fail(function() {
-				alert("error");
+				$.messager.alert('Info', 'Kesalahan!', 'info');
 			});								
 		}
 	});				
@@ -1076,10 +1078,10 @@ function konfirmasiData(url_link, id, pesan, reload_link)
 
 function konfirmasiAksi(konfirmasi, web_link, id)
 {
-	$.messager.confirm('Confirmation',konfirmasi,function(r){
+	$.messager.confirm('Konfirmasi',konfirmasi,function(r){
 		if (r){
 			var win = $.messager.progress({
-                title:'TMJ | PT Trans Marga Jateng',
+                title:'TMJ | Aplikasi Manajemen Kearsipan',
                 msg:'Process data...'
             });						
 			
@@ -1087,13 +1089,13 @@ function konfirmasiAksi(konfirmasi, web_link, id)
 				$.messager.progress('close');
 				$.messager.alertReload('Info', data, 'info');	
 			})
-			.done(function() {
+			.done(function(data) {
 				$.messager.progress('close');
 				$.messager.alertReload('Info', data, 'info');	
 			})
-			.fail(function() {
+			.fail(function(data) {
 				$.messager.progress('close');
-				alert("error");
+				$.messager.alert('Info', 'Kesalahan!', 'info');
 			});								
 		}
 	});				
@@ -1106,7 +1108,7 @@ function konfirmasiAksiHapusDraft(konfirmasi, web_link, id)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses data...'
 				});						
 				
@@ -1135,7 +1137,7 @@ function konfirmasiAksiHapusDraftAdmin(konfirmasi, web_link, id)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses data...'
 				});						
 				
@@ -1165,7 +1167,7 @@ function konfirmasiAksiRefreshSurat(konfirmasi, web_link, id)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses data...'
 				});						
 				
@@ -1189,7 +1191,7 @@ function konfirmasiAksiAlertLink(konfirmasi, web_link, id, alert_link)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses data...'
 				});						
 				
@@ -1211,23 +1213,23 @@ function konfirmasiAksiAlertLink(konfirmasi, web_link, id, alert_link)
 function konfirmasiPost(konfirmasi, web_link, id)
 {
 	$.messager.confirm('Konfirmasi',konfirmasi,function(r){
-			if (r){
-				
-				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
-					msg:'proses...'
-				});						
-				
-				$.post( web_link, { reqId: id })
-				  .done(function( data ) {
-					$.messager.progress('close');
-				})
-				.fail(function() {
-					$.messager.progress('close');
-					alert( "error" );
-				});				
-			}
-		});				
+		if (r){
+			
+			var win = $.messager.progress({
+				title:'TMJ | Aplikasi Manajemen Kearsipan',
+				msg:'proses...'
+			});						
+			
+			$.post( web_link, { reqId: id })
+			  .done(function( data ) {
+				$.messager.progress('close');
+			})
+			.fail(function() {
+				$.messager.progress('close');
+				alert( "error" );
+			});				
+		}
+	});				
 }
 
 
@@ -1237,7 +1239,7 @@ function konfirmasiUbahRolePostReload(konfirmasi, web_link, id, satkerId)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses...'
 				});						
 				
@@ -1261,7 +1263,7 @@ function konfirmasiPostReload(konfirmasi, web_link, id)
 			if (r){
 				
 				var win = $.messager.progress({
-					title:'TNDE | PT Angkasa Pura I',
+					title:'TMJ | Aplikasi Manajemen Kearsipan',
 					msg:'proses...'
 				});						
 				
@@ -1652,7 +1654,7 @@ function postingApproval(pesan, kodeDokumen, primaryId, judulDokumen='')
 		$.messager.confirm('Confirm',pesan,function(r){
 			if (r){
 				var win = $.messager.progress({
-					ttitle:'IFM | PT Garuda Daya Pratama Sejahtera',
+					ttitle:'TMJ | Aplikasi Manajemen Kearsipan',
                     msg:'Process data...'
 				});
 				
